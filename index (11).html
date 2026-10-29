@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96' width='92' height='92' aria-hidden='true'%3E%3Cdefs%3E%3ClinearGradient id='lg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ffe27a'/%3E%3Cstop offset='1' stop-color='%23f59bbf'/%3E%3C/linearGradient%3E%3ClinearGradient id='sg' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23ffffff'/%3E%3Cstop offset='1' stop-color='%23fff0f5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='96' height='96' rx='28' fill='url(%23lg)'/%3E%3Crect x='12' y='12' width='72' height='72' rx='24' fill='%23fff' opacity='.22' transform='rotate(14 48 48)'/%3E%3Cellipse cx='34' cy='20' rx='26' ry='12' fill='%23fff' opacity='.28'/%3E%3Cpath d='M48 14C51 34 62 45 82 48C62 51 51 62 48 82C45 62 34 51 14 48C34 45 45 34 48 14Z' fill='%23d9638f' opacity='.3' transform='translate(0 3)'/%3E%3Cpath d='M48 14C51 34 62 45 82 48C62 51 51 62 48 82C45 62 34 51 14 48C34 45 45 34 48 14Z' fill='url(%23sg)'/%3E%3Ccircle cx='48' cy='48' r='15' fill='%23d9638f'/%3E%3Cpath fill-rule='evenodd' fill='%23fff' transform='translate(48 48) scale(.62) translate(-28.7 -32)' d='M17 16h14a9 9 0 0 1 6.5 15.2A10 10 0 0 1 33 48H17zM25 23v6h6a3 3 0 0 0 0-6zM25 35v7h7a3.5 3.5 0 0 0 0-7z'/%3E%3Cpath d='M76 14l2 5 5 2-5 2-2 5-2-5-5-2 5-2z' fill='%23fff'/%3E%3Cpath d='M20 70l1.6 4 4 1.6-4 1.6L20 81l-1.6-3.8-4-1.6 4-1.6z' fill='%23f5b301'/%3E%3C/svg%3E">
+<title>BrandUp – Studio Personal Branding AI</title>
+<meta name="description" content="Bangun identitas profesional, konten media sosial, latihan wawancara, dan evaluasi personal branding.">
+<style>
+:root{--bg:#fff8e6;--card:#fffdf8;--tx:#4a2f3a;--mu:#8a6b78;--bd:#f3dfd0;--pr:#f4a6c3;--bt:#4a2340;--ac:#ffd96b;--pk:#d9638f;--side:#fcdbe7;--nv:#7a4560;--ok:#2f8f55;--bad:#c2410c}
+[data-theme=dark]{--bg:#2b2029;--card:#3a2b38;--tx:#fff1f5;--mu:#d2b3c1;--bd:#523a4d;--side:#1f1620;--nv:#f3c9d8;--bt:#3a1830}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.55 system-ui,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--tx);display:flex;min-height:100vh}
+h1,h2,h3{letter-spacing:-.02em;margin:0 0 .4em;line-height:1.2}
+h1{font-size:1.8rem}h2{font-size:1.2rem}h3{font-size:1rem}
+aside{width:230px;background:var(--side);color:#fff;padding:20px 14px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:4px}
+.logo{font-weight:800;font-size:1.3rem;padding:0 10px 16px}.logo b{color:var(--pk)}
+nav button{all:unset;box-sizing:border-box;width:100%;padding:10px 12px;border-radius:10px;cursor:pointer;color:var(--nv);display:block}
+nav button:hover{background:#ffffff55}
+nav button.on{background:var(--ac);color:#4a2f3a;font-weight:700}
+nav button:focus-visible,.btn:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+main{flex:1;padding:28px;max-width:1000px;min-width:0}
+section{display:none}section.on{display:block}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:18px;margin-bottom:16px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.form{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+label{display:block;font-weight:600;font-size:.85rem;margin-bottom:4px}
+input,textarea,select{width:100%;padding:10px 12px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--tx);font:inherit}
+textarea{min-height:110px;resize:vertical}
+.btn{border:0;border-radius:10px;padding:10px 16px;font:inherit;font-weight:700;cursor:pointer;background:var(--pr);color:var(--bt)}
+.btn.alt{background:transparent;color:var(--tx);border:1px solid var(--bd)}
+.btn.red{background:var(--bad);color:#fff}.btn.sm{padding:5px 10px;font-size:.8rem}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.mu{color:var(--mu)}.big{font-size:2.4rem;font-weight:800;line-height:1}
+.bar{height:10px;background:var(--bd);border-radius:9px;overflow:hidden;margin:6px 0 12px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--ac),var(--pr));border-radius:9px;transition:width .5s}
+.out{white-space:pre-wrap;background:var(--bg);border-radius:10px;padding:12px;margin:6px 0 12px}
+.tag{display:inline-block;background:var(--bg);border:1px solid var(--bd);padding:2px 10px;border-radius:99px;font-size:.78rem;margin:2px}
+.good{color:var(--ok)}.warn{color:var(--bad)}
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--tx);color:var(--bg);padding:10px 18px;border-radius:10px;opacity:0;pointer-events:none;transition:opacity .3s;z-index:9}
+#toast.on{opacity:1}
+#toast{z-index:30}
+.who{margin-top:auto;padding:10px;font-size:.8rem;color:var(--nv);overflow-wrap:anywhere}
+#login{position:fixed;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;padding:20px;background:linear-gradient(135deg,#fff1b8,#fcd3e2);color:#4a2f3a}
+#login[hidden]{display:none}
+.lbox{background:#fffdf8;border-radius:22px;padding:30px;max-width:420px;width:100%;box-shadow:0 18px 50px #d9638f33}
+.lbox h1{font-size:1.7rem;margin-bottom:10px;text-align:center}.llogo{margin-bottom:16px;line-height:0;display:flex;justify-content:center;filter:drop-shadow(0 8px 12px #d9638f40)}
+.lbox label{margin-top:12px}
+.lbox input,.lbox select{background:#fff8e6;color:#4a2f3a;border-color:#f3dfd0}
+.lbox .btn{width:100%;margin-top:20px;background:#f4a6c3;color:#4a2340}
+.ic{display:inline-block;width:1.7em}
+@media(max-width:760px){aside{width:72px;flex-shrink:0;padding:12px 6px;overflow-y:auto}
+.logo,.who{display:none}nav button{text-align:center;padding:10px 2px;font-size:.62rem;line-height:1.25;overflow-wrap:anywhere}
+.ic{display:block;width:auto;font-size:1.3rem;margin-bottom:2px}
+main{padding:14px}h1{font-size:1.4rem}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div id="login"><form class="lbox" id="lform" autocomplete="off">
+<div class="llogo"><svg viewBox="0 0 96 96" width="92" height="92" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe27a"/><stop offset="1" stop-color="#f59bbf"/></linearGradient><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#fff0f5"/></linearGradient></defs><rect width="96" height="96" rx="28" fill="url(#lg)"/><rect x="12" y="12" width="72" height="72" rx="24" fill="#fff" opacity=".22" transform="rotate(14 48 48)"/><ellipse cx="34" cy="20" rx="26" ry="12" fill="#fff" opacity=".28"/><path d="M48 14C51 34 62 45 82 48C62 51 51 62 48 82C45 62 34 51 14 48C34 45 45 34 48 14Z" fill="#d9638f" opacity=".3" transform="translate(0 3)"/><path d="M48 14C51 34 62 45 82 48C62 51 51 62 48 82C45 62 34 51 14 48C34 45 45 34 48 14Z" fill="url(#sg)"/><circle cx="48" cy="48" r="15" fill="#d9638f"/><path fill-rule="evenodd" fill="#fff" transform="translate(48 48) scale(.62) translate(-28.7 -32)" d="M17 16h14a9 9 0 0 1 6.5 15.2A10 10 0 0 1 33 48H17zM25 23v6h6a3 3 0 0 0 0-6zM25 35v7h7a3.5 3.5 0 0 0 0-7z"/><path d="M76 14l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#fff"/><path d="M20 70l1.6 4 4 1.6-4 1.6L20 81l-1.6-3.8-4-1.6 4-1.6z" fill="#f5b301"/></svg></div>
+<h1>Selamat datang di Brand<span style="color:#d9638f">Up</span></h1>
+<label for="l_nama">Nama pengguna</label><input id="l_nama" maxlength="60">
+<label for="l_prof">Profesi</label><select id="l_prof"><option value="" selected></option><option>Mahasiswa</option><option>Pelajar</option><option>Guru</option><option>Dosen</option><option>Akuntan</option><option>Fresh Graduate</option><option>Karyawan</option><option>Wirausaha</option><option>Freelancer</option><option>Content Creator</option><option>Lainnya</option></select>
+<button class="btn" type="submit">Masuk</button></form></div>
+<aside>
+<div class="logo">Brand<b>Up</b></div>
+<nav id="nav">
+<button data-v="dash" class="on"><span class="ic">🏠</span>Dashboard</button>
+<button data-v="prof"><span class="ic">👤</span>Profil Saya</button>
+<button data-v="studio"><span class="ic">✨</span>Studio Konten</button>
+<button data-v="iv"><span class="ic">🎤</span>Simulasi Wawancara</button>
+<button data-v="ev"><span class="ic">📊</span>Evaluasi</button>
+<button data-v="set"><span class="ic">⚙️</span>Pengaturan</button>
+</nav>
+<div class="who" id="who"></div>
+</aside>
+<main>
+
+<section id="dash" class="on">
+<h1 id="hi">Halo!</h1>
+<p class="mu">Bangun citra profesionalmu langkah demi langkah. Semua data tersimpan di browser ini.</p>
+<div class="grid">
+<div class="card"><div class="mu">Kelengkapan profil</div><div class="big" id="d1">0%</div></div>
+<div class="card"><div class="mu">Skor personal branding</div><div class="big" id="d2">0</div></div>
+<div class="card"><div class="mu">Konten tersimpan</div><div class="big" id="d3">0</div></div>
+<div class="card"><div class="mu">Latihan wawancara</div><div class="big" id="d4">0</div></div>
+</div>
+<div class="card"><h2>Langkah berikutnya</h2><div id="next"></div></div>
+<div class="card"><h2>Tips hari ini</h2><p id="tip"></p></div>
+</section>
+
+<section id="prof">
+<h1>Profil & Identitas Profesional</h1>
+<p class="mu">Isi sedetail mungkin. Pisahkan keahlian dan nilai dengan koma.</p>
+<div class="card"><div class="form" id="pf"></div>
+<div class="row" style="margin-top:14px"><button class="btn" id="psave">Simpan & buat identitas</button><button class="btn alt" id="pdemo">Isi contoh</button></div></div>
+<div id="pout"></div>
+</section>
+
+<section id="studio">
+<h1>Studio Konten</h1>
+<div class="card"><div class="form">
+<div><label for="sp">Platform</label><select id="sp"><option>LinkedIn</option><option>Instagram</option><option>TikTok</option></select></div>
+<div><label for="sm">Jenis hasil</label><select id="sm"><option value="ide">Ide konten 7 hari</option><option value="cap">Caption siap pakai</option></select></div>
+<div style="grid-column:1/-1"><label for="st">Topik (opsional)</label><input id="st" placeholder="mis. belajar akuntansi, magang, tips kuliah"></div>
+</div><div class="row" style="margin-top:14px"><button class="btn" id="sgen">Buat konten</button></div></div>
+<div id="sout"></div>
+<h2>Pustaka konten</h2><div id="lib"></div>
+</section>
+
+<section id="iv">
+<h1>Simulasi Wawancara</h1>
+<div class="card">
+<div class="row"><select id="ic" style="max-width:260px" aria-label="Kategori"><option value="umum">Wawancara umum / HRD</option><option value="edu">Guru & pendidik</option><option value="akun">Akuntansi & keuangan</option></select>
+<button class="btn" id="inew">Pertanyaan baru</button><button class="btn alt" id="ispeak">Bacakan</button></div>
+<h2 id="iq" style="margin-top:16px">Tekan "Pertanyaan baru" untuk memulai.</h2>
+<textarea id="ia" placeholder="Ketik jawabanmu, atau tekan Mulai bicara."></textarea>
+<div class="row" style="margin-top:10px"><button class="btn alt" id="imic">Mulai bicara</button><button class="btn" id="ieval">Nilai jawaban</button><span class="mu" id="imsg"></span></div>
+</div>
+<div id="ifb"></div>
+</section>
+
+<section id="ev">
+<h1>Evaluasi Personal Branding</h1>
+<div id="evo"></div>
+</section>
+
+<section id="set">
+<h1>Pengaturan</h1>
+<div class="card"><h2>Tampilan</h2><div class="row"><button class="btn alt" id="stheme">Ganti mode terang/gelap</button></div></div>
+<div class="card"><h2>Akun</h2><p class="mu">Ganti nama atau profesi tanpa menghapus data.</p><button class="btn alt" id="slogout">Keluar / ganti akun</button></div>
+<div class="card"><h2>Data</h2><p class="mu">Cadangkan atau pindahkan data ke perangkat lain.</p>
+<div class="row"><button class="btn" id="sexp">Unduh cadangan</button><label class="btn alt" style="margin:0">Pulihkan<input type="file" id="simp" accept=".json" hidden></label><button class="btn red" id="sres">Hapus semua data</button></div></div>
+<div class="card"><h2>Tentang</h2><p class="mu">BrandUp berjalan penuh di browser (HTML, CSS, JavaScript, LocalStorage, Web Speech API). Tanpa login dan tanpa server. Mesin AI-nya adalah analis berbasis aturan yang membaca profilmu dan menyusun konten serta umpan balik.</p></div>
+</section>
+</main>
+<div id="toast" role="status"></div>
+
+<script>
+(function(){
+var K='brandup_v1',$=function(i){return document.getElementById(i)};
+function load(){try{return JSON.parse(localStorage.getItem(K))}catch(e){return null}}
+var S=load()||{p:{},lib:[],iv:[],theme:'light'};
+function save(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function L(s){return String(s||'').split(',').map(function(x){return x.trim()}).filter(Boolean)}
+function toast(m){var t=$('toast');t.textContent=m;t.className='on';setTimeout(function(){t.className=''},1800)}
+function copy(t){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){toast('Disalin')},fb)}else fb();
+function fb(){var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');toast('Disalin')}catch(e){toast('Gagal menyalin')}a.remove()}}
+var clip=[];
+function block(title,text,extra){clip.push(text);return '<div><h3>'+esc(title)+'</h3><div class="out">'+esc(text)+'</div><div class="row" style="margin:-6px 0 12px"><button class="btn alt sm" data-c="'+(clip.length-1)+'">Salin</button>'+(extra||'')+'</div></div>'}
+document.addEventListener('click',function(e){var c=e.target.getAttribute&&e.target.getAttribute('data-c');if(c!==null&&c!==undefined)copy(clip[+c])});
+
+/* navigasi */
+function go(v){document.querySelectorAll('section').forEach(function(s){s.classList.toggle('on',s.id===v)});
+document.querySelectorAll('#nav button').forEach(function(b){b.classList.toggle('on',b.dataset.v===v)});
+if(v==='dash')dash();if(v==='ev')evalui();if(v==='studio')libui();window.scrollTo(0,0)}
+$('nav').addEventListener('click',function(e){var b=e.target.closest('button');if(b&&b.dataset.v)go(b.dataset.v)});
+
+/* profil */
+var F=[['nama','Nama lengkap','text','Nama kamu'],['profesi','Profesi / status','text','mis. Mahasiswa Pendidikan Akuntansi'],['kampus','Institusi','text','mis. Universitas ...'],['target','Target karier','text','mis. Guru akuntansi SMK / Akuntan'],['skill','Keahlian utama','text','mis. Microsoft Excel, Zahir, public speaking'],['nilai','Nilai yang dipegang','text','mis. jujur, teliti, kolaboratif'],['aud','Audiens yang dituju','text','mis. rekruter, sekolah, sesama mahasiswa'],['link','Tautan (LinkedIn/portofolio)','text','https://'],['exp','Pengalaman','textarea','Organisasi, magang, proyek...'],['ach','Pencapaian','textarea','Prestasi, angka, hasil nyata...']];
+var T=[['formal','Formal'],['hangat','Hangat'],['percaya diri','Percaya diri']];
+var h='';F.forEach(function(f){h+='<div'+(f[2]==='textarea'?' style="grid-column:1/-1"':'')+'><label for="f_'+f[0]+'">'+f[1]+'</label>'+(f[2]==='textarea'?'<textarea':'<input')+' id="f_'+f[0]+'" placeholder="'+f[3]+'">'+(f[2]==='textarea'?'</textarea>':'')+'</div>'});
+h+='<div><label for="f_tone">Gaya bahasa</label><select id="f_tone">'+T.map(function(t){return '<option>'+t[1]+'</option>'}).join('')+'</select></div>';
+$('pf').innerHTML=h;
+function fill(){F.forEach(function(f){$('f_'+f[0]).value=S.p[f[0]]||''});$('f_tone').value=S.p.tone||'Percaya diri'}
+function readp(){F.forEach(function(f){S.p[f[0]]=$('f_'+f[0]).value.trim()});S.p.tone=$('f_tone').value}
+function pct(){var n=0;F.forEach(function(f){if(S.p[f[0]])n++});return Math.round(n/F.length*100)}
+function ident(){var p=S.p,n=p.nama||'Saya',pr=p.profesi||'profesional muda',sk=L(p.skill),nl=L(p.nilai),tn=(p.tone||'Percaya diri').toLowerCase();
+var ks=sk.slice(0,3).join(', ')||'pengembangan diri',ins=p.kampus?' di '+p.kampus:'';
+var op=tn==='formal'?n+' adalah seorang '+pr+ins:tn==='hangat'?'Halo, saya '+n+', '+pr+ins:'Saya '+n+', '+pr+ins;
+var cl=tn==='formal'?'Berkomitmen memberi kontribusi yang profesional dan berdampak.':tn==='hangat'?'Senang berkenalan dan berkolaborasi dengan siapa pun!':'Siap menghadirkan hasil nyata dan terus berkembang.';
+var vn=nl.length?' Saya memegang nilai '+nl.slice(0,3).join(', ')+' dalam bekerja.':'';
+var short=op+' yang berfokus pada '+ks+'.'+vn+' '+cl;
+var long=op+' yang berfokus pada '+ks+'.'+(p.exp?'\n\nPengalaman: '+p.exp:'')+(p.ach?'\n\nPencapaian: '+p.ach:'')+(vn?'\n\n'+vn.trim():'')+(p.target?'\n\nSaat ini saya mengarah menjadi '+p.target+(p.aud?' dan ingin terhubung dengan '+p.aud:'')+'.':'')+'\n\n'+cl+(p.link?'\n\nTerhubung: '+p.link:'');
+var tag=(sk[0]||'Belajar')+' • '+(sk[1]||'Berkarya')+' • '+(sk[2]||'Berdampak');
+var hl=pr+(p.kampus?' @ '+p.kampus:'')+' | '+ks+' | '+(p.target?'Menuju '+p.target:'Terbuka untuk peluang');
+var pitch='Perkenalkan, saya '+n+', '+pr+ins+'. Keahlian saya ada di '+ks+'. '+(p.ach?'Saya pernah '+p.ach.split('\n')[0].replace(/\.$/,'')+'. ':'')+(p.target?'Saat ini saya menargetkan peran sebagai '+p.target+'. ':'')+'Saya ingin berkontribusi lewat '+(nl[0]||'kerja yang teliti')+' dan terus belajar.';
+var ig=n+'\n'+pr+'\n'+(sk[0]?'✔ '+sk.slice(0,3).join(' | ')+'\n':'')+(p.target?'🎯 '+p.target+'\n':'')+(p.link?'🔗 '+p.link:'');
+return [['Tagline',tag],['Headline LinkedIn',hl],['Bio singkat',short],['Bio lengkap',long],['Perkenalan 30 detik',pitch],['Bio Instagram',ig]]}
+function pshow(){if(!S.p.nama&&!S.p.profesi){$('pout').innerHTML='';return}
+clip=[];$('pout').innerHTML='<div class="card"><h2>Identitas profesional kamu</h2>'+ident().map(function(x){return block(x[0],x[1])}).join('')+'</div>'}
+$('psave').onclick=function(){readp();if(!S.p.nama){toast('Isi nama dulu');$('f_nama').focus();return}save();pshow();toast('Profil tersimpan')};
+$('pdemo').onclick=function(){var d={nama:'Alya Putri',profesi:'Mahasiswa Pendidikan Akuntansi',kampus:'Universitas Negeri',target:'Guru Akuntansi SMK',skill:'Microsoft Excel, Zahir, public speaking, desain materi ajar',nilai:'jujur, teliti, kolaboratif',aud:'sekolah dan rekruter pendidikan',link:'',exp:'Asisten praktikum akuntansi, staf divisi pendidikan organisasi mahasiswa.',ach:'Menyusun 12 modul ajar yang dipakai 3 kelas praktik.',tone:'Percaya diri'};
+Object.keys(d).forEach(function(k){S.p[k]=d[k]});fill();save();pshow();toast('Contoh diisi')};
+
+/* studio konten */
+var FMT={LinkedIn:'Post teks 150–250 kata + 1 pertanyaan penutup',Instagram:'Carousel 6–8 slide + caption singkat',TikTok:'Video 30–45 detik, 3 detik pertama berisi hook'};
+function ideas(pl,tp){var sk=L(S.p.skill),k=sk[0]||'keahlianmu',k2=sk[1]||k,t=tp||k,tg=S.p.target||'karier impianmu';
+var d=[['Senin • Edukasi','3 hal yang saya pelajari tentang '+t+' yang jarang dibahas kampus.'],['Selasa • Cerita pribadi','Alasan saya memilih jalur '+(S.p.profesi||'ini')+' dan momen yang hampir membuat saya berhenti.'],['Rabu • Tips praktis','Langkah mudah memakai '+k+' untuk '+t+' (lengkap dengan contoh).'],['Kamis • Di balik layar','Satu hari mengerjakan proyek '+t+': alat, proses, dan kesalahan yang saya perbaiki.'],['Jumat • Pencapaian','Hasil terbaru: '+(S.p.ach?S.p.ach.split('\n')[0]:'proyek yang baru selesai')+'. Apa yang berhasil dan apa yang saya ubah.'],['Sabtu • Opini','Mitos soal '+t+' yang menurut saya perlu diluruskan, dan alasannya.'],['Minggu • Ajak diskusi','Kalau kamu mau jadi '+tg+', skill apa yang akan kamu kuasai lebih dulu: '+k+' atau '+k2+'?']];
+return d.map(function(x){return [x[0]+' — '+pl,x[1]+'\nFormat: '+FMT[pl]]})}
+function caps(pl,tp){var sk=L(S.p.skill),t=tp||sk[0]||'personal branding',n=S.p.nama||'saya';
+var tags=['#'+t.replace(/[^a-zA-Z0-9]/g,''),'#PersonalBranding'].concat(sk.slice(0,2).map(function(s){return '#'+s.replace(/[^a-zA-Z0-9]/g,'')})).join(' ');
+var hk=['Dulu saya kira '+t+' itu rumit. Ternyata tidak.','Satu kebiasaan kecil soal '+t+' yang mengubah cara kerja saya.','Jangan mulai '+t+' sebelum membaca ini.'];
+return hk.map(function(x,i){return ['Caption '+(i+1)+' — '+pl,x+'\n\nSaya '+n+(S.p.profesi?', '+S.p.profesi:'')+'. Dari pengalaman saya'+(S.p.exp?' ('+S.p.exp.split('.')[0]+')':'')+', kuncinya ada pada konsistensi dan mau mencoba. Mulai dari satu langkah kecil hari ini.\n\nMenurutmu, bagian mana yang paling sulit? Tulis di komentar.\n\n'+tags]})}
+var cur=[];
+$('sgen').onclick=function(){if(!S.p.nama)toast('Tip: lengkapi profil agar hasil lebih personal');
+var pl=$('sp').value,tp=$('st').value.trim();cur=$('sm').value==='ide'?ideas(pl,tp):caps(pl,tp);clip=[];
+$('sout').innerHTML='<div class="card"><h2>Hasil untuk '+esc(pl)+'</h2>'+cur.map(function(x,i){return block(x[0],x[1],'<button class="btn sm" data-s="'+i+'">Simpan</button>')}).join('')+'</div>'};
+document.addEventListener('click',function(e){var s=e.target.getAttribute&&e.target.getAttribute('data-s');if(s!==null&&s!==undefined){S.lib.unshift({t:cur[+s][0],b:cur[+s][1],d:new Date().toLocaleDateString('id-ID')});save();libui();toast('Disimpan ke pustaka')}
+var x=e.target.getAttribute&&e.target.getAttribute('data-x');if(x!==null&&x!==undefined){S.lib.splice(+x,1);save();libui()}});
+function libui(){clip=clip.slice(0,cur.length);if(!S.lib.length){$('lib').innerHTML='<p class="mu">Belum ada konten tersimpan. Buat konten lalu tekan Simpan.</p>';return}
+$('lib').innerHTML='<div class="card">'+S.lib.map(function(x,i){return block(x.t+' ('+x.d+')',x.b,'<button class="btn red sm" data-x="'+i+'">Hapus</button>')}).join('')+'</div>'}
+
+/* wawancara */
+var Q={umum:['Ceritakan tentang dirimu.','Apa kelebihan dan kekuranganmu?','Mengapa kami harus memilih kamu?','Ceritakan pengalaman menghadapi konflik dalam tim.','Di mana kamu melihat dirimu lima tahun lagi?','Ceritakan kegagalan terbesarmu dan pelajarannya.'],
+edu:['Mengapa kamu ingin menjadi pendidik?','Bagaimana kamu menangani siswa yang tidak termotivasi?','Ceritakan pengalaman mengajar atau presentasi yang paling berkesan.','Bagaimana kamu memanfaatkan teknologi dalam pembelajaran?','Bagaimana kamu menilai hasil belajar siswa secara adil?'],
+akun:['Mengapa kamu tertarik pada bidang akuntansi?','Bagaimana kamu menjaga ketelitian saat mengerjakan laporan keuangan?','Ceritakan pengalamanmu memakai software akuntansi atau Excel.','Apa yang kamu lakukan jika menemukan selisih pada laporan?','Bagaimana kamu menjaga integritas dalam pekerjaan keuangan?']};
+var curq='';
+function newq(){var a=Q[$('ic').value];var q;do{q=a[Math.floor(Math.random()*a.length)]}while(q===curq&&a.length>1);curq=q;$('iq').textContent=q;$('ia').value='';$('ifb').innerHTML=''}
+$('inew').onclick=newq;$('ic').onchange=newq;
+$('ispeak').onclick=function(){if(!curq)newq();if(!('speechSynthesis' in window)){toast('Browser tidak mendukung suara');return}speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(curq);u.lang='id-ID';speechSynthesis.speak(u)};
+var SR=window.SpeechRecognition||window.webkitSpeechRecognition,rec=null,on=false;
+if(!SR){$('imic').disabled=true;$('imsg').textContent='Mode suara butuh Chrome atau Edge. Kamu tetap bisa mengetik.'}
+$('imic').onclick=function(){if(!SR)return;if(on){rec.stop();return}
+try{rec=new SR();rec.lang='id-ID';rec.continuous=true;rec.interimResults=false;
+rec.onresult=function(e){for(var i=e.resultIndex;i<e.results.length;i++){if(e.results[i].isFinal)$('ia').value+=(($('ia').value?' ':'')+e.results[i][0].transcript.trim())}};
+rec.onerror=function(e){$('imsg').textContent=e.error==='not-allowed'?'Izin mikrofon ditolak. Izinkan di pengaturan browser.':'Suara gagal ('+e.error+'). Coba ketik.'};
+rec.onend=function(){on=false;$('imic').textContent='Mulai bicara'};
+rec.start();on=true;$('imic').textContent='Berhenti';$('imsg').textContent='Mendengarkan...'}catch(e){$('imsg').textContent='Mikrofon tidak bisa dipakai.'}};
+function fbk(a){var w=a.trim().split(/\s+/).filter(Boolean),n=w.length,lo=a.toLowerCase(),sc=0,ok=[],fx=[];
+if(n>=50&&n<=200){sc+=25;ok.push('Panjang jawaban pas ('+n+' kata).')}else if(n<50){sc+=Math.round(n/2);fx.push('Jawaban terlalu singkat ('+n+' kata). Targetkan 60–180 kata.')}else{sc+=15;fx.push('Jawaban terlalu panjang ('+n+' kata). Ringkas ke poin utama.')}
+var st=[['situasi',/(ketika|saat|waktu|situasi|dulu|pernah)/],['tugas',/(tugas|target|tanggung jawab|tujuan|peran)/],['tindakan',/(saya (melakukan|membuat|menyusun|mengatur|memutuskan|mengajak|belajar|membantu)|langkah)/],['hasil',/(hasil|berhasil|meningkat|menurun|selesai|berkat|dampak)/]];
+var m=st.filter(function(x){return x[1].test(lo)});sc+=m.length*8;
+if(m.length>=3)ok.push('Struktur cerita cukup lengkap (STAR).');else fx.push('Lengkapi pola STAR. Belum terlihat: '+st.filter(function(x){return m.indexOf(x)<0}).map(function(x){return x[0]}).join(', ')+'.');
+if(/\d/.test(a)){sc+=15;ok.push('Ada angka atau data konkret.')}else fx.push('Tambahkan angka (jumlah, persen, durasi) agar lebih meyakinkan.');
+var fl=(lo.match(/\b(eee+|emm+|anu|kayak|pokoknya|gitu|ya kan|apa ya)\b/g)||[]).length;
+if(fl===0){sc+=10;ok.push('Bahasa bersih dari kata pengisi.')}else{fx.push('Ada '+fl+' kata pengisi (eee, kayak, gitu). Beri jeda hening sebagai gantinya.')}
+var sk=L(S.p.skill).filter(function(s){return lo.indexOf(s.toLowerCase())>-1});
+if(sk.length){sc+=12;ok.push('Menyebut keahlianmu: '+sk.join(', ')+'.')}else fx.push(S.p.skill?'Sebut keahlian andalanmu ('+L(S.p.skill).slice(0,2).join(', ')+') sebagai bukti.':'Isi keahlian di Profil agar umpan balik makin personal.');
+if(/\bsaya\b/.test(lo))sc+=5;else fx.push('Gunakan kata "saya" agar jawaban terasa personal.');
+return{sc:Math.min(100,sc),ok:ok,fx:fx,n:n}}
+$('ieval').onclick=function(){var a=$('ia').value;if(!curq){toast('Ambil pertanyaan dulu');return}if(a.trim().split(/\s+/).length<8){toast('Jawabanmu masih terlalu pendek');return}
+var r=fbk(a);S.iv.push({q:curq,s:r.sc,d:new Date().toLocaleDateString('id-ID')});save();
+var lv=r.sc>=80?'Siap tampil':r.sc>=60?'Hampir siap':'Perlu latihan';
+$('ifb').innerHTML='<div class="card"><div class="big">'+r.sc+'<span class="mu" style="font-size:1rem">/100</span></div><p><b>'+lv+'</b></p><div class="bar"><i style="width:'+r.sc+'%"></i></div>'+
+(r.ok.length?'<h3 class="good">Sudah bagus</h3><ul>'+r.ok.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>':'')+
+(r.fx.length?'<h3 class="warn">Perbaikan</h3><ul>'+r.fx.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>':'')+
+'<h3>Kerangka jawaban yang disarankan</h3><div class="out">1. Konteks: "Saat saya ... (situasi singkat)."\n2. Tugas: "Tanggung jawab/target saya adalah ..."\n3. Tindakan: "Saya melakukan ... lalu ..."\n4. Hasil: "Hasilnya ... (angka) dan saya belajar ..."</div></div>'};
+
+/* evaluasi */
+function scores(){var c=pct(),sk=L(S.p.skill).length,nl=L(S.p.nilai).length;
+var jelas=Math.min(100,(S.p.target?35:0)+(S.p.aud?25:0)+Math.min(sk,3)*10+Math.min(nl,3)*3);
+var kon=Math.min(100,Math.round(S.lib.length/7*100));
+var last=S.iv.slice(-5),wc=last.length?Math.round(last.reduce(function(a,b){return a+b.s},0)/last.length):0;
+var bukti=Math.min(100,(S.p.exp?30:0)+(S.p.ach?40:0)+(/\d/.test(S.p.ach||'')?30:0));
+var tot=Math.round(c*.25+jelas*.2+kon*.2+wc*.2+bukti*.15);
+return{tot:tot,items:[['Kelengkapan profil',c,'Lengkapi semua kolom di Profil Saya.'],['Kejelasan target & keahlian',jelas,'Tulis target karier, audiens, dan minimal 3 keahlian.'],['Konsistensi konten',kon,'Simpan 7 konten di Studio Konten (satu minggu penuh).'],['Kesiapan wawancara',wc,'Latih lebih banyak pertanyaan hingga skor di atas 75.'],['Bukti & pencapaian',bukti,'Tambahkan pengalaman dan pencapaian dengan angka.']]}}
+function evalui(){var s=scores(),w=s.items.slice().sort(function(a,b){return a[1]-b[1]}).slice(0,3);
+var lv=s.tot>=80?'Brand kuat':s.tot>=55?'Berkembang':'Tahap awal';
+$('evo').innerHTML='<div class="card"><div class="mu">Skor total</div><div class="big">'+s.tot+'</div><p><b>'+lv+'</b></p>'+s.items.map(function(x){return '<div>'+esc(x[0])+' <b>'+x[1]+'</b><div class="bar"><i style="width:'+x[1]+'%"></i></div></div>'}).join('')+'</div>'+
+'<div class="card"><h2>Rekomendasi prioritas</h2><ul>'+w.map(function(x){return '<li><b>'+esc(x[0])+':</b> '+esc(x[2])+'</li>'}).join('')+'</ul></div>'+
+(S.iv.length?'<div class="card"><h2>Riwayat wawancara</h2>'+S.iv.slice(-5).reverse().map(function(x){return '<p>'+esc(x.d)+' — '+esc(x.q)+' <span class="tag">'+x.s+'</span></p>'}).join('')+'</div>':'');
+return s.tot}
+
+/* dashboard */
+var TIPS=['Konsisten lebih penting daripada sempurna: satu konten per minggu sudah cukup.','Gunakan foto profil yang sama di semua platform agar mudah dikenali.','Tulis pencapaian dengan angka, bukan sekadar sifat.','Minta satu rekomendasi singkat dari dosen atau atasan untuk profilmu.','Latih jawaban "ceritakan tentang dirimu" sampai bisa dalam 60 detik.'];
+function dash(){var s=scores();$('who').textContent=S.user?S.user.nama+' • '+S.user.profesi:'';$('hi').textContent='Halo, '+(S.p.nama?S.p.nama.split(' ')[0]:'selamat datang')+'!';
+$('d1').textContent=pct()+'%';$('d2').textContent=s.tot;$('d3').textContent=S.lib.length;$('d4').textContent=S.iv.length;
+var w=s.items.slice().sort(function(a,b){return a[1]-b[1]})[0];
+$('next').innerHTML='<p>'+esc(w[2])+'</p><button class="btn" data-go="'+(w[0].indexOf('profil')>-1||w[0].indexOf('target')>-1||w[0].indexOf('Bukti')>-1?'prof':w[0].indexOf('konten')>-1?'studio':'iv')+'">Kerjakan sekarang</button>';
+$('tip').textContent=TIPS[new Date().getDate()%TIPS.length]}
+document.addEventListener('click',function(e){var g=e.target.getAttribute&&e.target.getAttribute('data-go');if(g)go(g)});
+
+/* pengaturan */
+function theme(){document.documentElement.setAttribute('data-theme',S.theme)}
+$('stheme').onclick=function(){S.theme=S.theme==='dark'?'light':'dark';save();theme()};
+$('sexp').onclick=function(){var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(S)],{type:'application/json'}));a.download='brandup-cadangan.json';a.click()};
+$('simp').onchange=function(e){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(){try{var d=JSON.parse(r.result);if(!d||typeof d.p!=='object')throw 0;S={p:d.p||{},lib:d.lib||[],iv:d.iv||[],theme:d.theme||'light',user:d.user||S.user};save();theme();fill();pshow();dash();toast('Data dipulihkan')}catch(x){toast('File cadangan tidak valid')}};r.readAsText(f)};
+$('sres').onclick=function(){if(confirm('Hapus semua profil, konten, dan riwayat wawancara?')){S={p:{},lib:[],iv:[],theme:S.theme,user:null};save();fill();pshow();dash();libui();showLogin();toast('Data dihapus')}};
+
+theme();fill();pshow();dash();libui();
+function setProf(v){var e=$('l_prof'),f=false;for(var i=0;i<e.options.length;i++)if(e.options[i].value===v)f=true;if(v&&!f)e.add(new Option(v,v));e.value=v||''}
+function showLogin(){$('login').hidden=false;$('l_nama').value=(S.user&&S.user.nama)||S.p.nama||'';setProf((S.user&&S.user.profesi)||S.p.profesi||'');setTimeout(function(){$('l_nama').focus()},50)}
+$('lform').addEventListener('submit',function(e){e.preventDefault();var n=$('l_nama').value.trim(),f=$('l_prof').value.trim();if(!n||!f){toast('Isi nama dan profesi dulu');return}
+S.user={nama:n,profesi:f};if(!S.p.nama)S.p.nama=n;if(!S.p.profesi)S.p.profesi=f;save();$('login').hidden=true;fill();pshow();go('dash')});
+$('slogout').onclick=function(){S.user=null;save();showLogin()};
+if(S.user)$('login').hidden=true;else showLogin();
+})();
+</script>
+</body>
+</html>
